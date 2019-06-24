@@ -1,35 +1,24 @@
 import random
+import string
+
 # function to generate strong password
-def generateStrongPassword():
-    charsUpper = "ABCDEFGHIJKLMNOPQRSTUVXYZ"
-    charsLow = "abcdefghijklmnopqrstuvwxyz"b
-    charsNumber = "0123456789"
-    charsSpecial = "!§$%&/(){}[]=?#*_-"
-    password = ''
-    password += random.choice(charsUpper)
-    password += random.choice(charsLow)
-    password += random.choice(charsNumber)
-    password += random.choice(charsSpecial)
-    password += random.choice(charsUpper)
-    password += random.choice(charsLow)
-    password += random.choice(charsNumber)
-    password += random.choice(charsSpecial)
-    return password
+# params{int} length of password
+# returns{String} random strong password 
+def generateStrongPassword(length):
+    randomChars = string.ascii_letters + string.digits + string.punctuation
+    return ''.join(random.choice(randomChars) for i in range(0, length))
+
 
 def generateWeakPassword():
     defaultPass = ['0123456789', '123456', 'abcdef', 'qawseedrf']
     return random.choice(defaultPass)
 
-#print('Generating password 1', generateStrongPassword())
-#print('Generating password 2', generateStrongPassword())
-#print('Generating password 3', generateStrongPassword())
-#print('Generating password 4', generateStrongPassword())
 
-answer = input('Do you want a strong or weak password?')
+answer = input('Do you want a strong or weak password?\n')
 if answer == 'strong':
-    print('Your strong password is ', generateStrongPassword())
+    length = int(input('How long should it be?\n'))
+    print('Your strong password is ', generateStrongPassword(length))
 elif answer == 'weak':
     print('Your weak password is ', generateWeakPassword())
 else:
     print('ERROR, you have typed a wrong word, please try again typing "strong" or "weak".')
-
