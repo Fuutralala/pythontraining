@@ -2,7 +2,7 @@ import random
 # function to generate strong password
 def generateStrongPassword():
     charsUpper = "ABCDEFGHIJKLMNOPQRSTUVXYZ"
-    charsLow = "abcdefghijklmnopqrstuvwxyz"
+    charsLow = "abcdefghijklmnopqrstuvwxyz"b
     charsNumber = "0123456789"
     charsSpecial = "!§$%&/(){}[]=?#*_-"
     password = ''
@@ -32,3 +32,4 @@ elif answer == 'weak':
     print('Your weak password is ', generateWeakPassword())
 else:
     print('ERROR, you have typed a wrong word, please try again typing "strong" or "weak".')
+
