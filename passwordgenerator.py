@@ -2,7 +2,7 @@ import random
 # function to generate strong password
 def generateStrongPassword():
     charsUpper = "ABCDEFGHIJKLMNOPQRSTUVXYZ"
-    charsLow = "abcdefghijklmnopqrstuvwxyz"b
+    charsLow = "abcdefghijklmnopqrstuvwxyz"
     charsNumber = "0123456789"
     charsSpecial = "!§$%&/(){}[]=?#*_-"
     password = ''
